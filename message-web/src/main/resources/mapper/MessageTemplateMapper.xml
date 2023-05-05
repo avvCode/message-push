@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vv.web.mapper.MessageTemplateMapper">
+
+    <resultMap id="BaseResultMap" type="com.vv.web.domain.MessageTemplate">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="msgStatus" column="msg_status" jdbcType="TINYINT"/>
+            <result property="idType" column="id_type" jdbcType="TINYINT"/>
+            <result property="sendChannel" column="send_channel" jdbcType="INTEGER"/>
+            <result property="msgType" column="msg_type" jdbcType="TINYINT"/>
+            <result property="msgContent" column="msg_content" jdbcType="VARCHAR"/>
+            <result property="sendAccount" column="send_account" jdbcType="INTEGER"/>
+            <result property="creator" column="creator" jdbcType="VARCHAR"/>
+            <result property="updator" column="updator" jdbcType="VARCHAR"/>
+            <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
+            <result property="created" column="created" jdbcType="INTEGER"/>
+            <result property="updated" column="updated" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,msg_status,
+        id_type,send_channel,msg_type,
+        msg_content,send_account,creator,
+        updator,is_deleted,created,
+        updated
+    </sql>
+</mapper>
