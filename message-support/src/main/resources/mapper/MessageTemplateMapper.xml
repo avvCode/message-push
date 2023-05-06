@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.vv.web.mapper.MessageTemplateMapper">
+<mapper namespace="com.vv.support.mapper.MessageTemplateMapper">
 
-    <resultMap id="BaseResultMap" type="com.vv.web.domain.MessageTemplate">
+    <resultMap id="BaseResultMap" type="com.vv.support.domain.MessageTemplate">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="msgStatus" column="msg_status" jdbcType="TINYINT"/>

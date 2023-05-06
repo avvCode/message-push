@@ -1,4 +1,4 @@
-package com.vv.web.domain;
+package com.vv.support.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

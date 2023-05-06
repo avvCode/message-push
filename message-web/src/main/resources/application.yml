@@ -1,0 +1,20 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: message-push
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/message_push
+    username: root
+    password: 123456
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+      logic-delete-field: is_deleted
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mapper/*.xml

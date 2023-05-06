@@ -25,6 +25,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <weixin-java>4.3.0</weixin-java>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -69,6 +70,25 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-boot-starter</artifactId>
                 <version>3.0.0</version>
+            </dependency>
+            <!--企业微信第三方SDK-->
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-cp</artifactId>
+                <version>${weixin-java}</version>
+            </dependency>
+            <!--微信服务号第三方SDK-->
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-mp</artifactId>
+                <version>${weixin-java}</version>
+            </dependency>
+
+            <!--微信小程序第三方SDK-->
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-miniapp</artifactId>
+                <version>${weixin-java}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
