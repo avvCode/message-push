@@ -29,7 +29,10 @@ public class TaskInfo {
      * 生成逻辑参考 TaskInfoUtils
      */
     private Long businessId;
-
+    /**
+     * 模板类型
+     */
+    private Integer templateType;
     /**
      * 接收者，接收者可能有多个，所以使用set集合
      */

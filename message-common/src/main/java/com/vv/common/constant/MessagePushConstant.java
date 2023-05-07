@@ -1,4 +1,4 @@
-package com.vv.web.constant;
+package com.vv.common.constant;
 
 public class MessagePushConstant {
     /**
@@ -7,4 +7,9 @@ public class MessagePushConstant {
     public static final String DEFAULT_CREATOR = "vv";
     public static final String DEFAULT_UPDATER = "vv";
     public static final String DEFAULT_TEAM = "走不出的死循环公众号";
+
+    /**
+     * 最大接收者长度
+     */
+    public static final Integer BATCH_RECEIVER_SIZE = 100;
 }

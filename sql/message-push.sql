@@ -24,6 +24,7 @@ create table message_template
     id_type tinyint default 0 not null comment '消息的发送ID类型：10. userId 20.did 30.手机号 40.openId 50.email 60.企业微信userId',
     send_channel int default 0 not null comment '消息发送渠道：10.IM 20.Push 30.短信 40.Email 50.公众号 60.小程序 70.企业微信 80.钉钉机器人 90.钉钉工作通知 100.企业微信机器人 110.飞书机器人 110. 飞书应用消息 ',
     msg_type tinyint default 0 not null comment '10.通知类消息 20.营销类消息 30.验证码类消息',
+    `template_type`    tinyint(4) NOT NULL DEFAULT '0' COMMENT '10.运营类 20.技术类接口调用',
     msg_content varchar(4096) default '' not null comment '消息内容 占位符用{$var}表示',
     send_account int default 0 not null comment '发送账号 一个渠道下可存在多个账号',
     creator varchar(45) default '' not null comment '创建者',

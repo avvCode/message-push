@@ -2,7 +2,7 @@ package com.vv.web.advice;
 
 
 import com.vv.web.annotation.MessagePushResponseResult;
-import com.vv.web.common.BasicResult;
+import com.vv.common.vo.BasicResult;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.ServerHttpRequest;

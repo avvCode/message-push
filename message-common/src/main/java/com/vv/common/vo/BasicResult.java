@@ -1,10 +1,7 @@
-package com.vv.web.common;
+package com.vv.common.vo;
 
-import com.vv.web.common.enums.ResponseCodeEnums;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import com.vv.common.enums.ResponseCodeEnums;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 

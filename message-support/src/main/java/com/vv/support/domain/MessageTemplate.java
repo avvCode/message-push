@@ -68,7 +68,7 @@ public class MessageTemplate implements Serializable {
     /**
      * 更新者
      */
-    private String updator;
+    private String updater;
 
     /**
      * 是否删除：0.不删除 1.删除
@@ -84,7 +84,11 @@ public class MessageTemplate implements Serializable {
      * 更新时间
      */
     private Integer updated;
-
+    /**
+     * 消息模板类型 10运营 20 技术
+     */
+    private Integer templateType;
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
+
 }

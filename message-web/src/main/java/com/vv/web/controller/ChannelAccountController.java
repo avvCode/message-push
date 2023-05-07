@@ -4,11 +4,10 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.vv.support.domain.ChannelAccount;
 import com.vv.web.annotation.MessagePushResponseResult;
-import com.vv.web.constant.MessagePushConstant;
+import com.vv.common.constant.MessagePushConstant;
 import com.vv.web.service.ChannelAccountService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

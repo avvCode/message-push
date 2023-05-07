@@ -30,6 +30,7 @@ public class CommonConstant {
 
     public final static char QM = '?';
 
+
     /**
      * boolean转换
      */

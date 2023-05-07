@@ -26,6 +26,7 @@ public class MessageParam {
      * 多个用,逗号号分隔开
      * 【不能大于100个】
      * 必传
+     * （手机、邮件等）
      */
     private String receiver;
 
