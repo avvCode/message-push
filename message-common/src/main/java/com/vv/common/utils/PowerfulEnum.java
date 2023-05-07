@@ -4,7 +4,7 @@ package com.vv.common.utils;
  * @author kyw7
  * 枚举接口
  */
-interface PowerfulEnum {
+public interface PowerfulEnum {
 
     /**
      * 获取枚举的code
