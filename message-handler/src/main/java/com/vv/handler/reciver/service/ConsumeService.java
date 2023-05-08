@@ -6,14 +6,14 @@ import com.vv.support.domain.MessageTemplate;
 
 import java.util.List;
 
-public interface ConsumerService {
+public interface ConsumeService {
     /**
      * 发送消息
      */
-    void consumer2Send(List<TaskInfo> taskInfoLists);
+    void consume2Send(List<TaskInfo> taskInfoLists);
 
     /**
      * 撤回消息
      */
-    void consumer2recall(MessageTemplate messageTemplate);
+    void consume2recall(MessageTemplate messageTemplate);
 }
