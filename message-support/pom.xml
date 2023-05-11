@@ -75,5 +75,10 @@
             <groupId>com.sun.mail</groupId>
             <artifactId>javax.mail</artifactId>
         </dependency>
+        <!--动态线程池-->
+        <dependency>
+            <groupId>io.github.lyh200</groupId>
+            <artifactId>dynamic-tp-spring-boot-starter-nacos</artifactId>
+        </dependency>
     </dependencies>
 </project>
