@@ -31,8 +31,8 @@ services:
       ZK_HOSTS: zookeeper:2181
       APPLICATION_SECRET: xxxxx
       KAFKA_MANAGER_AUTH_ENABLED: "true"  # 开启kafka-manager权限校验
-      KAFKA_MANAGER_USERNAME: vv       # 登陆账户
-      KAFKA_MANAGER_PASSWORD: wei1712531751      # 登陆密码
+      KAFKA_MANAGER_USERNAME:        # 登陆账户
+      KAFKA_MANAGER_PASSWORD:       # 登陆密码
     ports:                              # 映射端口
       - "9000:9000"
     depends_on:                         # 解决容器依赖启动先后问题
