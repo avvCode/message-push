@@ -19,7 +19,7 @@ import com.vv.support.domain.MessageTemplate;
 import com.vv.support.mapper.MessageTemplateMapper;
 import com.vv.support.pipeline.BusinessProcess;
 import com.vv.support.pipeline.ProcessContext;
-import com.vv.support.utils.ContentHolderUtil;
+import com.vv.support.utils.ContentHolderUtils;
 import com.vv.support.utils.TaskInfoUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -126,7 +126,7 @@ public class AssembleAction implements BusinessProcess<SendTaskModel> {
             //将模板参数替换成真实值
             if (StrUtil.isNotBlank(originValue)) {
 
-                String resultValue = ContentHolderUtil.replacePlaceHolder(originValue, variables);
+                String resultValue = ContentHolderUtils.replacePlaceHolder(originValue, variables);
 
                 Object resultObj = JSONUtil.isJsonObj(resultValue)
                         ?

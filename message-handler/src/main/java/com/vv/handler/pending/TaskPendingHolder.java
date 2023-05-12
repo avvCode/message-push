@@ -32,6 +32,7 @@ public class TaskPendingHolder {
         //将消费者组id与线程池关联起来
         for (String groupId : groupIds) {
             DtpExecutor executor = HandlerThreadPoolConfig.getExecutor(groupId);
+
             threadPoolUtils.register(executor);
 
             taskPendingHolder.put(groupId, executor);

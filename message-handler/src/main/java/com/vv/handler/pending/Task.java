@@ -1,11 +1,14 @@
 package com.vv.handler.pending;
 
+import cn.hutool.core.collection.CollUtil;
 import com.vv.common.domain.TaskInfo;
+import com.vv.handler.deduplication.DeduplicationRuleService;
 import com.vv.handler.handler.HandlerHolder;
 import jdk.internal.org.objectweb.asm.Handle;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -17,6 +20,10 @@ import org.springframework.stereotype.Component;
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Task implements Runnable{
 
+    @Autowired
+    private DeduplicationRuleService deduplicationRuleService;
+
+    @Autowired
     private HandlerHolder handlerHolder;
 
     private TaskInfo taskInfo;
@@ -28,7 +35,13 @@ public class Task implements Runnable{
         //1.屏蔽
 
         //2.去重
-
-        //3.发送消息
+        if( CollUtil.isNotEmpty(taskInfo.getReceiver())){
+            deduplicationRuleService.duplication(taskInfo);
+        }
+        // 3. 真正发送消息
+        if (CollUtil.isNotEmpty(taskInfo.getReceiver())) {
+            handlerHolder.route(taskInfo.getSendChannel())
+                    .doHandler(taskInfo);
+        }
     }
 }

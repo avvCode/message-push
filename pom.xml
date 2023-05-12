@@ -47,6 +47,7 @@
                 <artifactId>fastjson</artifactId>
                 <version>1.2.83</version>
             </dependency>
+
             <!--hutool工具包-->
             <dependency>
                 <groupId>cn.hutool</groupId>

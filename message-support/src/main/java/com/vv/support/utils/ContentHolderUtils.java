@@ -13,7 +13,7 @@ import java.util.Map;
  * <p>
  * austin占位符格式{$var}
  */
-public class ContentHolderUtil {
+public class ContentHolderUtils {
 
     /**
      * 占位符前缀

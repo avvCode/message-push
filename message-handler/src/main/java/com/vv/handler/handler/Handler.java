@@ -1,14 +1,17 @@
 package com.vv.handler.handler;
 
+import com.vv.common.domain.TaskInfo;
+import com.vv.support.domain.MessageTemplate;
+
 /**
  *
  * @author vv
  */
 public interface Handler {
     //
-    void handler();
+    void doHandler(TaskInfo taskInfo);
 
 
     //
-    void recall();
+    void recall(MessageTemplate messageTemplate);
 }
