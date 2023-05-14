@@ -5,11 +5,13 @@
 ## 项目技术栈
 * Java 8 
 * SpringBoot 2.x 
-* Mybatis-plus
-* MySQL 8.x
+* Mybatis-plus ORM框架
+* MySQL 8.x 数据库
 * Redis 缓存
-* Kafka 消息队列
+* Kafka 消息队列 + Zeekeepr 注册中心 
+* Nacos 注册中心 + 配置中心
 * Dynamic-TP 动态线程池(需搭配配置中心Apollo/Nacos)
+* Docker + Docker-Compose 部署
 ## 项目架构
 
 ## 项目模块
@@ -26,4 +28,5 @@
 3. 采用Redis + lua脚本 + 模板设计模式实现平台消息去重
 
 ## 目前接入的平台
-……
+1. 邮箱Email
+2. ……

@@ -39,7 +39,7 @@ public class TaskPendingHolder {
         }
     }
 
-    public ExecutorService getRoute(String groupId){
+    public ExecutorService route(String groupId){
         return taskPendingHolder.get(groupId);
     }
 }
