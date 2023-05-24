@@ -64,7 +64,11 @@
             <groupId>com.github.binarywang</groupId>
             <artifactId>weixin-java-miniapp</artifactId>
         </dependency>
-
+        <!--nacos-->
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-config-spring-boot-starter</artifactId>
+        </dependency>
         <!--企业微信第三方SDK-->
         <dependency>
             <groupId>com.github.binarywang</groupId>

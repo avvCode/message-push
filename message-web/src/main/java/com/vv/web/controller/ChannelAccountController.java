@@ -8,9 +8,13 @@ import com.vv.common.constant.MessagePushConstant;
 import com.vv.web.service.ChannelAccountService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +25,7 @@ import java.util.stream.Collectors;
 @Api(tags = "渠道账号管理")
 @RestController
 @MessagePushResponseResult
+@Slf4j
 public class ChannelAccountController {
 
     @Resource
@@ -33,7 +38,7 @@ public class ChannelAccountController {
     @PostMapping("/save")
     @ApiOperation("/保存账号信息")
     public ChannelAccount saveOrUpdate(@RequestBody ChannelAccount channelAccount){
-
+        log.info("{}",channelAccount);
         channelAccount.setCreator(StrUtil.isBlank(channelAccount.getCreator())
                 ? MessagePushConstant.DEFAULT_CREATOR : channelAccount.getCreator());
 

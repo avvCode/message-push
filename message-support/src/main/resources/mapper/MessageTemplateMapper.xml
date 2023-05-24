@@ -14,14 +14,15 @@
             <result property="msgContent" column="msg_content" jdbcType="VARCHAR"/>
             <result property="sendAccount" column="send_account" jdbcType="INTEGER"/>
             <result property="creator" column="creator" jdbcType="VARCHAR"/>
-            <result property="updator" column="updator" jdbcType="VARCHAR"/>
+            <result property="templateType" column="template_type" jdbcType="VARCHAR"/>
+            <result property="updater" column="updater" jdbcType="VARCHAR"/>
             <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
             <result property="created" column="created" jdbcType="INTEGER"/>
             <result property="updated" column="updated" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,name,msg_status,
+        id,name,msg_status,template_type,
         id_type,send_channel,msg_type,
         msg_content,send_account,creator,
         updator,is_deleted,created,

@@ -88,6 +88,7 @@ public class MessageTemplate implements Serializable {
      * 消息模板类型 10运营 20 技术
      */
     private Integer templateType;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
