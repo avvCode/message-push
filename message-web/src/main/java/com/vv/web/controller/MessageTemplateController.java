@@ -4,11 +4,9 @@ import cn.hutool.core.util.StrUtil;
 import com.vv.support.domain.MessageTemplate;
 import com.vv.web.annotation.MessagePushResponseResult;
 import com.vv.web.service.MessageTemplateService;
-import com.vv.web.utils.Convert4Amis;
 import com.vv.web.vo.MessageTemplateParam;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 

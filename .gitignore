@@ -36,4 +36,4 @@ build/
 .vscode/
 
 ## private
-
+application.yml
