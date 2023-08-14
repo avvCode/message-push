@@ -37,3 +37,4 @@ build/
 
 ## private
 application.yml
+/message-web/src/main/resources/application.properties
