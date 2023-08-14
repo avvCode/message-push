@@ -8,10 +8,10 @@ import java.text.MessageFormat;
 import java.util.Map;
 
 /**
- * @author vv
+ * @author 3y
  * 内容占位符 替换
  * <p>
- * message-push占位符格式{$var}
+ * austin占位符格式{$var}
  */
 public class ContentHolderUtils {
 

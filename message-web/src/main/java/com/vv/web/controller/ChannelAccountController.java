@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.vv.support.domain.ChannelAccount;
 import com.vv.web.annotation.MessagePushResponseResult;
 import com.vv.common.constant.MessagePushConstant;
-import com.vv.web.dto.channelaccount.ChannelAccountAddRequest;
 import com.vv.web.service.ChannelAccountService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -33,13 +32,18 @@ public class ChannelAccountController {
     private ChannelAccountService channelAccountService;
 
     /**
-     * 新增渠道账号
+     * 保存渠道账号信息 id不存在
+     * 更新渠道账号信息 id存在
      */
     @PostMapping("/save")
     @ApiOperation("/保存账号信息")
-    public ChannelAccount saveOrUpdate(@RequestBody ChannelAccountAddRequest channelAccountAddRequest){
-        log.info("{}",channelAccountAddRequest);
-        return channelAccountService.save(channelAccountAddRequest);
+    public ChannelAccount saveOrUpdate(@RequestBody ChannelAccount channelAccount){
+        log.info("{}",channelAccount);
+        channelAccount.setCreator(StrUtil.isBlank(channelAccount.getCreator())
+                ? MessagePushConstant.DEFAULT_CREATOR : channelAccount.getCreator());
+
+        channelAccountService.saveOrUpdate(channelAccount);
+        return channelAccount;
     }
     /**
      * 获取所有渠道账号信息

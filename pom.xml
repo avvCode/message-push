@@ -66,11 +66,11 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>3.5.2</version>
             </dependency>
-            <!-- https://doc.xiaominfo.com/knife4j/documentation/get_start.html-->
+            <!--swagger-->
             <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-spring-boot-starter</artifactId>
-                <version>3.0.3</version>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>3.0.0</version>
             </dependency>
 
             <!--企业微信第三方SDK-->
@@ -103,18 +103,6 @@
                 <groupId>com.alibaba.boot</groupId>
                 <artifactId>nacos-config-spring-boot-starter</artifactId>
                 <version>0.2.12</version>
-            </dependency>
-            <!--apollo-->
-            <dependency>
-                <groupId>com.ctrip.framework.apollo</groupId>
-                <artifactId>apollo-client</artifactId>
-                <version>2.1.0</version>
-            </dependency>
-            <!--xxl-job分布式定时任务-->
-            <dependency>
-                <groupId>com.xuxueli</groupId>
-                <artifactId>xxl-job-core</artifactId>
-                <version>2.3.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

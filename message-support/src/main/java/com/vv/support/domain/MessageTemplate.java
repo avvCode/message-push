@@ -5,7 +5,10 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 消息模板信息
@@ -13,6 +16,8 @@ import lombok.Data;
  */
 @TableName(value ="message_template")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class MessageTemplate implements Serializable {
     /**
      * 
@@ -26,34 +31,9 @@ public class MessageTemplate implements Serializable {
     private String name;
 
     /**
-     * 当前消息审核状态： 10.待审核 20.审核成功 30.被拒绝
-     */
-    private Integer auditStatus;
-
-    /**
-     * 工单ID
-     */
-    private String flowId;
-
-    /**
      * 当前消息状态：10.新建 20.停用 30.启用 40.等待发送 50.发送中 60.发送成功 70.发送失败
      */
     private Integer msgStatus;
-
-    /**
-     * 定时任务Id (xxl-job-admin返回)
-     */
-    private Long cronTaskId;
-
-    /**
-     * 定时发送人群的文件路径
-     */
-    private String cronCrowdPath;
-
-    /**
-     * 期望发送时间：0:立即发送 定时任务以及周期任务:cron表达式
-     */
-    private String expectPushTime;
 
     /**
      * 消息的发送ID类型：10. userId 20.did 30.手机号 40.openId 50.email 60.企业微信userId
@@ -66,19 +46,9 @@ public class MessageTemplate implements Serializable {
     private Integer sendChannel;
 
     /**
-     * 10.运营类 20.技术类接口调用
-     */
-    private Integer templateType;
-
-    /**
      * 10.通知类消息 20.营销类消息 30.验证码类消息
      */
     private Integer msgType;
-
-    /**
-     * 10.夜间不屏蔽 20.夜间屏蔽 30.夜间屏蔽(次日早上9点发送)
-     */
-    private Integer shieldType;
 
     /**
      * 消息内容 占位符用{$var}表示
@@ -88,7 +58,7 @@ public class MessageTemplate implements Serializable {
     /**
      * 发送账号 一个渠道下可存在多个账号
      */
-    private Long sendAccount;
+    private Integer sendAccount;
 
     /**
      * 创建者
@@ -98,22 +68,7 @@ public class MessageTemplate implements Serializable {
     /**
      * 更新者
      */
-    private String updator;
-
-    /**
-     * 审核人
-     */
-    private String auditor;
-
-    /**
-     * 业务方团队
-     */
-    private String team;
-
-    /**
-     * 业务方
-     */
-    private String proposer;
+    private String updater;
 
     /**
      * 是否删除：0.不删除 1.删除
@@ -129,7 +84,12 @@ public class MessageTemplate implements Serializable {
      * 更新时间
      */
     private Integer updated;
+    /**
+     * 消息模板类型 10运营 20 技术
+     */
+    private Integer templateType;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
+
 }

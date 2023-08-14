@@ -7,7 +7,7 @@ spring:
       collectorTypes: micrometer     # 监控数据采集器类型（logging | micrometer | internal_logging），默认micrometer             # 监控日志数据路径，默认 ${user.home}/logs，采集类型非logging不用配置
       monitorInterval: 5                      # 监控时间间隔（报警检测、指标采集），默认5s
       nacos:                                  # nacos配置，不配置有默认值（user-center-dev.yml这样）
-        dataId: dynamic-tp-apollo-dtp.yml       # 该配置文件的 dataId，如上述 user-center-dtp-dev.yml
+        dataId: dynamic-tp-nacos-dtp.yml       # 该配置文件的 dataId，如上述 user-center-dtp-dev.yml
         group: DEFAULT_GROUP
       configType: yml                         # 配置文件类型
       platforms:                              # 通知报警平台配置

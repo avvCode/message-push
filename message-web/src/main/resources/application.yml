@@ -1,0 +1,42 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: message-push
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/message_push
+    username: root
+    password: 123456
+
+  redis:
+    port: 6379
+    host: 
+    password: 
+
+  kafka:
+    bootstrap-servers: 
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+      auto-commit-interval: 1000
+      enable-auto-commit: true
+nacos:
+  config:
+    server-addr: 127.0.0.1:8848
+    group:
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+      logic-delete-field: is_deleted
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mapper/*.xml
+
