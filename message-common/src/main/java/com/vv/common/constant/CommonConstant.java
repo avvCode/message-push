@@ -2,7 +2,7 @@ package com.vv.common.constant;
 
 
 /**
- * @author 3y
+ * @author vv
  */
 public class CommonConstant {
 

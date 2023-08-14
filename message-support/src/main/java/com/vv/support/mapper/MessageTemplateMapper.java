@@ -1,13 +1,11 @@
 package com.vv.support.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.vv.support.domain.MessageTemplate;
-import org.apache.ibatis.annotations.Mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
- * @author vv
- */
-@Mapper
+* @author vv
+*/
 public interface MessageTemplateMapper extends BaseMapper<MessageTemplate> {
 
 }

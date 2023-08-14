@@ -2,7 +2,10 @@ package com.vv.support.mq;
 
 public interface SendMqService {
     /**
-     * 一个接口，发送具体看要哪个中间件
+     * 发送消息
+     *
+     * @param topic
+     * @param jsonValue
      */
-    void send(String topic,String jsonValue);
+    void send(String topic, String jsonValue);
 }

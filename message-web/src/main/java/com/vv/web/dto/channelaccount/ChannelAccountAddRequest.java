@@ -1,25 +1,18 @@
-package com.vv.support.domain;
+package com.vv.web.dto.channelaccount;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
 import lombok.Data;
 
-/**
- * 渠道账号信息
- * @TableName channel_account
- */
-@TableName(value ="channel_account")
-@Data
-public class ChannelAccount implements Serializable {
-    /**
-     *
-     */
-    @TableId(type = IdType.ASSIGN_ID)
-    private Long id;
+import java.io.Serializable;
 
+/**
+ * @author vv
+ */
+@Data
+public class ChannelAccountAddRequest {
     /**
      * 账号名称
      */
@@ -35,26 +28,6 @@ public class ChannelAccount implements Serializable {
      */
     private String accountConfig;
 
-    /**
-     * 拥有者
-     */
-    private String creator;
 
-    /**
-     * 创建时间
-     */
-    private Integer created;
-
-    /**
-     * 更新时间
-     */
-    private Integer updated;
-
-    /**
-     * 是否删除：0.不删除 1.删除
-     */
-    private Integer isDeleted;
-
-    @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 }

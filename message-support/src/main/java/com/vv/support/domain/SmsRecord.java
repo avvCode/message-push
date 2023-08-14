@@ -5,10 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * 短信记录信息
@@ -16,8 +13,6 @@ import lombok.NoArgsConstructor;
  */
 @TableName(value ="sms_record")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class SmsRecord implements Serializable {
     /**
      * 
