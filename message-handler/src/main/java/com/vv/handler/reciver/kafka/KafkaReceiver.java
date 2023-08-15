@@ -22,7 +22,7 @@ import java.util.Optional;
 @Component
 @Slf4j
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-public class Receiver {
+public class KafkaReceiver {
     @Autowired
     private ConsumeService consumeService;
 

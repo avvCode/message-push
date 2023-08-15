@@ -18,5 +18,6 @@ class ChannelAccountControllerTest {
 
     @Test
     void deleteByIds() {
+
     }
 }

@@ -4,11 +4,20 @@ import com.vv.common.domain.TaskInfo;
 import com.vv.common.enums.ChannelType;
 import com.vv.common.enums.MessageType;
 import com.vv.common.utils.EnumUtil;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class GroupIdMappingUtils {
+    /**
+     * 下标(用于迭代groupIds位置)
+     */
+    private static Integer index = 0;
+
+    private static List<String> groupIds = getAllGroupIds();
+
     /**
     * 获取所有渠道ID
     */
@@ -27,6 +36,12 @@ public class GroupIdMappingUtils {
         }
         return groupIds;
     }
+    /**
+    * 一个一个获取
+    */
+    public  String get(){
+       return groupIds.get(index++);
+    }
 
     /**
      * 根据taskInfo获取groupId
@@ -44,4 +59,5 @@ public class GroupIdMappingUtils {
 
         return channelCodeEn + "." + msgCodeEn;
     }
+
 }

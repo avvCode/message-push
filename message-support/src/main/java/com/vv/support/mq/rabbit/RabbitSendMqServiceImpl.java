@@ -1,8 +1,4 @@
-package com.vv.support.mq.rabbitmq;
-
-/**
- * @author vv
- */
+package com.vv.support.mq.rabbit;
 
 import com.vv.support.constants.MessageQueuePipeline;
 import com.vv.support.mq.SendMqService;
@@ -14,7 +10,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 /**
-* @author vv
+ * @author vv
  */
 @Slf4j
 @Service
@@ -24,19 +20,19 @@ public class RabbitSendMqServiceImpl implements SendMqService {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @Value("${message.push.rabbitmq.topic.name}")
-    private String confTopic;
 
     @Value("${message.push.rabbitmq.exchange.name}")
     private String exchangeName;
 
 
+
     @Override
     public void send(String topic, String jsonValue) {
-        if (topic.equals(confTopic)) {
-            rabbitTemplate.convertAndSend(exchangeName, confTopic, jsonValue);
-        } else {
-            log.error("RabbitSendMqServiceImpl send topic error! topic:{},confTopic:{}", topic, confTopic);
-        }
+
+    }
+
+    @Override
+    public void send(String topic, String jsonValue, String routingKey) {
+        rabbitTemplate.convertAndSend(exchangeName, routingKey, jsonValue);
     }
 }
