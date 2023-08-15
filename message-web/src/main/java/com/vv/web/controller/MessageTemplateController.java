@@ -3,7 +3,6 @@ package com.vv.web.controller;
 import cn.hutool.core.util.StrUtil;
 import com.vv.support.domain.MessageTemplate;
 import com.vv.web.annotation.MessagePushResponseResult;
-import com.vv.web.dto.messagetemplate.MessageTemplateAddRequest;
 import com.vv.web.service.MessageTemplateService;
 import com.vv.web.vo.MessageTemplateParam;
 import io.swagger.annotations.Api;
@@ -14,12 +13,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
  * 消息模板相关
  */
-@Api(tags = "消息模板管理")
+@Api("消息模板管理")
 @RestController
 @MessagePushResponseResult
 @RequestMapping("/messageTemplate")
@@ -28,13 +28,14 @@ public class MessageTemplateController {
     private MessageTemplateService messageTemplateService;
 
     /**
-     *保存消息模板
+     * 如果Id存在，则修改
+     * 如果Id不存在，则保存
      */
     @PostMapping("/save")
     @ApiOperation("/保存数据")
-    public MessageTemplate save(@RequestBody MessageTemplateAddRequest messageTemplateAddRequest) {
-
-        return messageTemplateService.save(messageTemplateAddRequest);
+    public MessageTemplate saveOrUpdate(@RequestBody MessageTemplate messageTemplate) {
+        messageTemplateService.saveOrUpdate(messageTemplate);
+        return messageTemplate;
     }
 
     /**
@@ -52,8 +53,8 @@ public class MessageTemplateController {
      */
     @GetMapping("query/{id}")
     @ApiOperation("/根据Id查找")
-    public MessageTemplate queryById(@PathVariable("id") Long id) {
-        return messageTemplateService.getById(id);
+    public Map<String, Object> queryById(@PathVariable("id") Long id) {
+        return Convert4Amis.flatSingleMap(messageTemplateService.getById(id));
     }
 
 

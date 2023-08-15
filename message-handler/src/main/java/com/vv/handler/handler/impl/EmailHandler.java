@@ -10,6 +10,7 @@ import com.vv.common.dto.model.EmailContentModel;
 import com.vv.common.enums.ChannelType;
 import com.vv.handler.handler.BaseHandler;
 import com.vv.handler.handler.Handler;
+import com.vv.support.domain.ChannelAccount;
 import com.vv.support.domain.MessageTemplate;
 import com.vv.support.utils.AccountUtils;
 import com.vv.support.utils.FileUtils;
@@ -61,7 +62,7 @@ public class EmailHandler extends BaseHandler implements Handler{
      *
      * @return
      */
-    private MailAccount getAccountConfig(Long sendAccount) {
+    private MailAccount getAccountConfig(Integer sendAccount) {
         MailAccount account = accountUtils.getChannelAccountById(sendAccount, MailAccount.class);
         try {
             MailSSLSocketFactory sf = new MailSSLSocketFactory();
