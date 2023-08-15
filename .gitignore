@@ -36,5 +36,4 @@ build/
 .vscode/
 
 ## private
-application.yml
-/message-web/src/main/resources/application.properties
+/message-web/src/main/resources/
