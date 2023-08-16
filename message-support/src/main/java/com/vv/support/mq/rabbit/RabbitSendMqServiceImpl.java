@@ -1,8 +1,11 @@
 package com.vv.support.mq.rabbit;
 
+
 import com.vv.support.constants.MessageQueuePipeline;
 import com.vv.support.mq.SendMqService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,6 +36,9 @@ public class RabbitSendMqServiceImpl implements SendMqService {
 
     @Override
     public void send(String topic, String jsonValue, String routingKey) {
-        rabbitTemplate.convertAndSend(exchangeName, routingKey, jsonValue);
+        MessageProperties messageProperties = new MessageProperties();
+        messageProperties.setHeader("messageType","send");
+        Message message = new Message(jsonValue.getBytes(), messageProperties);
+        rabbitTemplate.convertAndSend(exchangeName, routingKey, message);
     }
 }

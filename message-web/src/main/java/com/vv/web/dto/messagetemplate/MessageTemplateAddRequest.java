@@ -1,25 +1,15 @@
-package com.vv.support.domain;
+package com.vv.web.dto.messagetemplate;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
 import lombok.Data;
 
 /**
- * 消息模板信息
- * @TableName message_template
+ * @author vv
  */
-@TableName(value ="message_template")
 @Data
-public class MessageTemplate implements Serializable {
-    /**
-     *
-     */
-    @TableId(type = IdType.AUTO)
-    private Long id;
-
+public class MessageTemplateAddRequest {
     /**
      * 标题
      */
@@ -34,11 +24,6 @@ public class MessageTemplate implements Serializable {
      * 工单ID
      */
     private String flowId;
-
-    /**
-     * 当前消息状态：10.新建 20.停用 30.启用 40.等待发送 50.发送中 60.发送成功 70.发送失败
-     */
-    private Integer msgStatus;
 
     /**
      * 定时任务Id (xxl-job-admin返回)
@@ -63,7 +48,7 @@ public class MessageTemplate implements Serializable {
     /**
      * 消息发送渠道：10.IM 20.Push 30.短信 40.Email 50.公众号 60.小程序 70.企业微信 80.钉钉机器人 90.钉钉工作通知 100.企业微信机器人 110.飞书机器人 110. 飞书应用消息
      */
-    private Integer sendChannel;
+    private Long sendChannel;
 
     /**
      * 10.运营类 20.技术类接口调用
@@ -91,21 +76,6 @@ public class MessageTemplate implements Serializable {
     private Long sendAccount;
 
     /**
-     * 创建者
-     */
-    private String creator;
-
-    /**
-     * 更新者
-     */
-    private String updator;
-
-    /**
-     * 审核人
-     */
-    private String auditor;
-
-    /**
      * 业务方团队
      */
     private String team;
@@ -115,21 +85,6 @@ public class MessageTemplate implements Serializable {
      */
     private String proposer;
 
-    /**
-     * 是否删除：0.不删除 1.删除
-     */
-    private Integer isDeleted;
 
-    /**
-     * 创建时间
-     */
-    private Integer created;
-
-    /**
-     * 更新时间
-     */
-    private Integer updated;
-
-    @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 }

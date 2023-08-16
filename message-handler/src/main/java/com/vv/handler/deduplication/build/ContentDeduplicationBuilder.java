@@ -4,6 +4,7 @@ import com.vv.common.domain.TaskInfo;
 import com.vv.common.enums.DeduplicationType;
 import com.vv.common.utils.AnchorState;
 import com.vv.handler.deduplication.DeduplicationParam;
+import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 
@@ -12,6 +13,7 @@ import java.util.Objects;
  * 内容去重
  * 一天5次
  */
+@Service
 public class ContentDeduplicationBuilder extends AbstractDeduplicationBuilder implements Builder{
 
     public ContentDeduplicationBuilder(){

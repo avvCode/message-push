@@ -26,7 +26,7 @@ import java.util.List;
 @Service
 @Slf4j
 @ConditionalOnProperty(name = "message.push.mq.pipeline", havingValue = MessageQueuePipeline.RABBIT_MQ)
-public class RabbitMqReceiverStart implements ApplicationListener<ApplicationReadyEvent> {
+public class RabbitMqReceiverStart {
     /**
      * 上下文容器，用来获取实例
      */
@@ -81,8 +81,4 @@ public class RabbitMqReceiverStart implements ApplicationListener<ApplicationRea
         return new RabbitAdmin(connectionFactory);
     }
 
-    @Override
-    public void onApplicationEvent(ApplicationReadyEvent event) {
-        applicationContext.getBean(this.getClass());
-    }
 }

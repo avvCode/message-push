@@ -62,7 +62,7 @@ public class EmailHandler extends BaseHandler implements Handler{
      *
      * @return
      */
-    private MailAccount getAccountConfig(Integer sendAccount) {
+    private MailAccount getAccountConfig(Long sendAccount) {
         MailAccount account = accountUtils.getChannelAccountById(sendAccount, MailAccount.class);
         try {
             MailSSLSocketFactory sf = new MailSSLSocketFactory();

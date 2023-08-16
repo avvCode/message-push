@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Component("groupIdMappingUtils")
 public class GroupIdMappingUtils {
     /**
      * 下标(用于迭代groupIds位置)

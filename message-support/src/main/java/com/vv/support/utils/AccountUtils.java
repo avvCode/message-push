@@ -23,9 +23,9 @@ public class AccountUtils {
     @Resource
     private ChannelAccountMapper channelAccountMapper;
 
-    public <T> T getChannelAccountById(Integer sendAccountId , Class<T> clazz){
+    public <T> T getChannelAccountById(Long sendAccountId , Class<T> clazz){
         try {
-            ChannelAccount channelAccount = channelAccountMapper.selectById(Long.valueOf(sendAccountId));
+            ChannelAccount channelAccount = channelAccountMapper.selectById(sendAccountId);
             if (channelAccount != null) {
                 return JSON.parseObject(channelAccount.getAccountConfig(), clazz);
             }

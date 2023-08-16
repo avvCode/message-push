@@ -5,6 +5,7 @@ import com.vv.common.domain.TaskInfo;
 import com.vv.handler.deduplication.DeduplicationHolder;
 import com.vv.handler.deduplication.DeduplicationParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.Objects;

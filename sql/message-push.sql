@@ -1,8 +1,8 @@
-drop database if exists austin;
+drop database if exists message_push;
 
-create database austin;
+create database message_push;
 
-use austin;
+use message_push;
 
 drop table IF EXISTS message_template;
 

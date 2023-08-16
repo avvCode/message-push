@@ -5,7 +5,10 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.google.common.base.Throwables;
 import com.vv.common.domain.TaskInfo;
+import com.vv.common.enums.ChannelType;
+import com.vv.common.enums.MessageType;
 import com.vv.common.enums.ResponseCodeEnums;
+import com.vv.common.utils.EnumUtil;
 import com.vv.common.vo.BasicResult;
 import com.vv.service.api.enums.BusinessCode;
 import com.vv.service.api.impl.domain.SendTaskModel;
@@ -63,9 +66,12 @@ public class SendMqAction implements BusinessProcess<SendTaskModel> {
                         break;
                     case MessageQueuePipeline.RABBIT_MQ:
                         TaskInfo taskInfo = sendTaskModel.getTaskInfo().iterator().next();
-                        String routingKey = taskInfo.getSendChannel() + "." + taskInfo.getMsgType();
+                        ChannelType channelType = EnumUtil.getEnumByCode(taskInfo.getSendChannel(), ChannelType.class);
+                        MessageType messageType = EnumUtil.getEnumByCode(taskInfo.getMsgType(), MessageType.class);
+                        String routingKey = routingKeyPrefix + "." + channelType.getCodeEn() + "." + messageType.getCodeEn();
                         SendRabbitMq(message,exchangeName,routingKey);
                         break;
+
                 }
 
 

@@ -30,7 +30,7 @@ public class RabbitMqReceiver {
     @Autowired
     private ConsumeService consumeService;
 
-    @RabbitListener(queues = "#{groupIdMappingUtils.getAllGroupIds().get()}")
+    @RabbitListener(queues = "#{'${message.pusg.rabbitmq.queue.name.prefix}'+'.'+ groupIdMappingUtils.get()}")
     public void onMessage(Message message) {
         String messageType = message.getMessageProperties().getHeader("messageType");
         byte[] body = message.getBody();

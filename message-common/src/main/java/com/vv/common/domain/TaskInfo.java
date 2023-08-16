@@ -65,7 +65,7 @@ public class TaskInfo {
     /**
      * 发送账号（邮件下可有多个发送账号、短信可有多个发送账号..）
      */
-    private Integer sendAccount;
+    private Long sendAccount;
 
 
 }

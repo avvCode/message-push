@@ -6,6 +6,7 @@ import com.vv.common.domain.TaskInfo;
 import com.vv.common.enums.DeduplicationType;
 import com.vv.common.utils.AnchorState;
 import com.vv.handler.deduplication.DeduplicationParam;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.Objects;
@@ -14,6 +15,7 @@ import java.util.Objects;
  * 频次去重
  * 五分钟一次
  */
+@Service
 public class FrequencyDeduplicationBuilder extends AbstractDeduplicationBuilder implements Builder{
 
     public FrequencyDeduplicationBuilder(){
