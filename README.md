@@ -8,8 +8,8 @@
 * Mybatis-plus ORM框架
 * MySQL 8.x 数据库
 * Redis 缓存
-* Kafka 消息队列 + Zeekeepr 注册中心 
-* Nacos 注册中心 + 配置中心
+* RabbitMQ 消息队列 + Zeekeepr 注册中心 
+* Apollo配置中心
 * Dynamic-TP 动态线程池(需搭配配置中心Apollo/Nacos)
 * Docker + Docker-Compose 部署
 ## 项目架构
@@ -20,7 +20,7 @@
 * message-push-api-impl 接口实现层
 * message-push-handler 将消息下发到具体平台
 * message-push-web 对外提供接口Crud
-* message-push-support 对接三方服务（Redis、Kafka、Dynamic-TP……）
+* message-push-support 对接三方服务（Redis、RabbitMQ、Dynamic-TP……）
 
 ## 项目技术特性
 1. 采用职责链设计模式处理传入参数
@@ -29,4 +29,4 @@
 
 ## 目前接入的平台
 1. 邮箱Email
-2. ……
+2. 腾讯云手机短信
